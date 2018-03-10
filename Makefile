@@ -44,7 +44,7 @@ src/libxkbcommon/pkg/libxkbcommon.so.0.0.0: src/libxkbcommon/build bin/ninja
 src/libxkbcommon/build: src/libxkbcommon/meson.build bin/meson
 	cd src/libxkbcommon; meson setup build --prefix ${OVERLORD_PREFIX}
 
-bin/meson:
+bin/meson: bin/ninja
 	pip3 install --prefix ${OVERLORD_PREFIX} meson
 
 bin/ninja: src/ninja/ninja
