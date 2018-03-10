@@ -9,7 +9,7 @@ src/i3/x86_64-unknown-linux-gnu: src/i3/configure
 src/i3/configure: src/i3/configure.ac lib/libxcb-cursor.so lib/libxcb-xrm.so lib/libxkbcommon.so.0.0.0
 	cd src/i3; autoreconf -fi
 
-lib/xcb-util-cursor.so: src/xcb-util-cursor/Makefile
+lib/libxcb-cursor.so: src/xcb-util-cursor/Makefile
 	cd src/xcb-util-cursor; make
 	cd src/xcb-util-cursor; make install
 
