@@ -1,0 +1,19 @@
+[submodule "src/i3"]
+	path = src/i3
+	url = https://github.com/i3/i3
+	branch = master
+[submodule "src/xcb-util-cursor"]
+	path = src/xcb-util-cursor
+	url = https://anongit.freedesktop.org/git/xcb/util-cursor.git
+[submodule "src/xcb-util-xrm"]
+	path = src/xcb-util-xrm
+	url = https://github.com/Airblader/xcb-util-xrm
+[submodule "src/libxkbcommon"]
+	path = src/libxkbcommon
+	url = https://github.com/xkbcommon/libxkbcommon.git
+[submodule "src/ninja"]
+	path = src/ninja
+	url = https://github.com/ninja-build/ninja
+[submodule "src/dmenu"]
+	path = src/dmenu
+	url = https://git.suckless.org/dmenu
