@@ -85,3 +85,16 @@ src/feh/src/feh: src/feh
 
 bin/feh: src/feh/src/feh
 	cd src/feh; make PREFIX=${OVERLORD_PREFIX} install
+
+src/weechat:
+	git clone https://github.com/weechat/weechat $@ -b 2.0
+
+src/weechat/build/Makefile: src/weechat
+	mkdir src/weechat/build
+	cd src/weechat/build; cmake .. -DCMAKE_INSTALL_PREFIX=${OVERLORD_PREFIX} -DCMAKE_BUILD_TYPE=Release 
+
+src/weechat/build/src/gui/curses/weechat: src/weechat/build/Makefile
+	cd src/weechat/build; make
+
+bin/weechat: src/weechat/build/Makefile
+	cd src/weechat/build; make install
