@@ -67,3 +67,12 @@ src/dmenu:
 
 src/i3:
 	git clone https://github.com/i3/i3 $@ -b master
+
+src/i3blocks:
+	git clone https://github.com/vivien/i3blocks $@ -b master
+
+src/i3blocks/i3blocks: src/i3blocks
+	cd src/i3blocks; make clean all
+
+bin/i3blocks: src/i3blocks/i3blocks
+	cd src/i3blocks; make PREFIX=${OVERLORD_PREFIX} install
