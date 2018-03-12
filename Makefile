@@ -76,3 +76,12 @@ src/i3blocks/i3blocks: src/i3blocks
 
 bin/i3blocks: src/i3blocks/i3blocks
 	cd src/i3blocks; make PREFIX=${OVERLORD_PREFIX} install
+
+src/feh:
+	git clone https://github.com/derf/feh $@ -b 2.25.1
+
+src/feh/src/feh: src/feh
+	cd src/feh; make
+
+bin/feh: src/feh/src/feh
+	cd src/feh; make PREFIX=${OVERLORD_PREFIX} install
